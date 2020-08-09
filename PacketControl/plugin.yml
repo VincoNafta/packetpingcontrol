@@ -1,0 +1,7 @@
+name: PacketPingControl
+version: 1.0.0
+author: Kociik_CZ
+main: sk.kocka.packet.Main
+description: Kontrola Pingu
+api-version: 1.16
+commands:
