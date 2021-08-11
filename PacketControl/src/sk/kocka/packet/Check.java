@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 
 public class Check {
 	static Check inst2;
-	static ArrayList<String> blacklist = new ArrayList<String>();
+	private static ArrayList<String> blacklist = new ArrayList<String>();
 	public void SpustiKontrolu() {
 		Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.instancia, new Runnable() {
 			
@@ -37,19 +37,21 @@ public class Check {
 					}, 20*30);
 				}
 				else {
-					if(blacklist.contains(p.getName())) {
-						blacklist.remove(p.getName());
+				String hrac = p.getName();
+					if(blacklist.contains(hrac) {
+						blacklist.remove(hrac);
 					}
 				}
 		}
 	}
-	public void KickPing(Player p) {
-		for(int i=0; i< blacklist.size()-1; i++) {
+	private void KickPing(Player p) {
+		for(int i=0; i< blacklist.size(); i++) {
 			Integer pocet = 0;
-			if(blacklist.get(i).equals(p.getName())) {
+			String hrac = p.getName();
+			if(blacklist.get(i).equals(hrac)) {
 				pocet++;
 				if (pocet == 3) {
-					blacklist.remove(p.getName());
+					blacklist.remove(hrac);
 					p.kickPlayer("Boli ste vyhodený pre vysoký ping");
 				}
 			}
